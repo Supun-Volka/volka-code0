@@ -1,0 +1,62 @@
+stop();
+var bgId:String;
+bgBtn1.addEventListener(MouseEvent. CLICK, selectbg1);
+function selectbg1(event:MouseEvent):void
+{
+
+
+	gotoAndStop(15);
+	bgId = "1";
+	gotoAndStop(15);
+	trace(bgId);
+
+
+}
+bgBtn2.addEventListener(MouseEvent. CLICK, selectbg2);
+function selectbg2(event:MouseEvent):void
+{
+
+
+	gotoAndStop(15);
+	bgId = "2";
+	gotoAndStop(15);
+	trace(bgId);
+
+
+}
+bgBtn3.addEventListener(MouseEvent. CLICK, selectbg3);
+function selectbg3(event:MouseEvent):void
+{
+
+
+	gotoAndStop(15);
+	bgId = "3";
+	gotoAndStop(15);
+	trace(bgId);
+
+
+}
+bgBtn4.addEventListener(MouseEvent. CLICK, selectbg4);
+function selectbg4(event:MouseEvent):void
+{
+
+
+	gotoAndStop(15);
+	bgId = "4";
+	gotoAndStop(15);
+	trace(bgId);
+
+
+}
+bgBtn5.addEventListener(MouseEvent. CLICK, selectbg5);
+function selectbg5(event:MouseEvent):void
+{
+
+
+	gotoAndStop(15);
+	bgId = "5";
+	gotoAndStop(15);
+	trace(bgId);
+
+
+}

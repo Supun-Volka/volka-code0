@@ -1,0 +1,275 @@
+import flash.display.MovieClip;
+import flash.events.*;
+import flash.net.*;
+import flash.text.*;
+import flash.events.MouseEvent;
+import flash.net.URLRequest;
+import flash.net.URLVariables;
+import flash.net.URLLoader;
+
+
+stop();
+var wId:String;
+var selBg:String;
+var myV:String;
+var myK:String;
+
+
+//var myGv:String = MovieClip(root).sMessage;
+
+selW1.addEventListener(MouseEvent. CLICK, selectwish1);
+function selectwish1(event:MouseEvent):void
+{
+
+	gotoAndStop(15);
+	MovieClip(root).wId = "Group 1";
+	//gotoAndStop(15);
+	selBg = MovieClip(root).bgId;
+	trace(selBg);
+	trace(wId);
+
+	var variables:URLVariables = new URLVariables();
+	//variables.myname = myName;
+	//variables.mymom = mothername;
+	variables.mybg = selBg;
+	variables.myquote = wId;
+
+
+	var request:URLRequest = new URLRequest('http://localhost/mylink/data.php');
+	request.method = URLRequestMethod.POST;
+	request.data = variables;
+
+	var loader:URLLoader = new URLLoader(request);
+	loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+	loader.addEventListener(Event.COMPLETE, dataOnLoad);
+	loader.load(request);
+
+	function dataOnLoad(e:Event)
+	{
+		var variables:URLVariables = URLVariables(e.target.data);
+		//resptxt.text = variables.done;
+		trace(variables.result);
+		var myV = variables.result;// gives : variable k display here
+		MovieClip(root).myK = myV;
+		//trace(myK);
+		gotoAndStop(25);
+
+		var rect:Shape = new Shape();
+		rect.graphics.beginFill(0xFFFFFF);
+		rect.graphics.drawRect(0, 0, 465, 365);
+		rect.graphics.endFill();
+		addChild(rect);
+		var ldr:Loader = new Loader();
+		ldr.mask = rect;
+		var url:String = "http://localhost/mylink/img_bg_Final" + myV + ".png";//put the returned img url you got from the php here.
+		var urlReq:URLRequest = new URLRequest(url);
+		ldr.load(urlReq);
+		//the loader will start loading the img;
+		addChild(ldr);//here you add the loader to stage. 
+
+	}
+}
+
+selW2.addEventListener(MouseEvent. CLICK, selectwish2);
+function selectwish2(event:MouseEvent):void
+{
+
+	gotoAndStop(15);
+	MovieClip(root).wId = "Group 2";
+	//gotoAndStop(15);
+	selBg = MovieClip(root).bgId;
+	trace(selBg);
+	trace(wId);
+
+	var variables:URLVariables = new URLVariables();
+	//variables.myname = myName;
+	//variables.mymom = mothername;
+	variables.mybg = selBg;
+	variables.myquote = wId;
+
+
+	var request:URLRequest = new URLRequest('http://localhost/mylink/data.php');
+	request.method = URLRequestMethod.POST;
+	request.data = variables;
+
+	var loader:URLLoader = new URLLoader(request);
+	loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+	loader.addEventListener(Event.COMPLETE, dataOnLoad);
+	loader.load(request);
+
+	function dataOnLoad(e:Event)
+	{
+		var variables:URLVariables = URLVariables(e.target.data);
+		//resptxt.text = variables.done;
+		trace(variables.result);
+		var myV = variables.result;// gives : variable k display here
+		MovieClip(root).myK = myV;
+		gotoAndStop(25);
+
+		var rect:Shape = new Shape();
+		rect.graphics.beginFill(0xFFFFFF);
+		rect.graphics.drawRect(0, 0, 465, 365);
+		rect.graphics.endFill();
+		addChild(rect);
+		var ldr:Loader = new Loader();
+		ldr.mask = rect;
+		var url:String = "http://localhost/mylink/img_bg_Final" + myV + ".png";//put the returned img url you got from the php here.
+		var urlReq:URLRequest = new URLRequest(url);
+		ldr.load(urlReq);
+		//the loader will start loading the img;
+		addChild(ldr);//here you add the loader to stage. 
+	}
+}
+
+selW3.addEventListener(MouseEvent. CLICK, selectwish3);
+function selectwish3(event:MouseEvent):void
+{
+
+	gotoAndStop(15);
+	MovieClip(root).wId = "Group 3";
+	//gotoAndStop(15);
+	selBg = MovieClip(root).bgId;
+	trace(selBg);
+	trace(wId);
+
+	var variables:URLVariables = new URLVariables();
+	//variables.myname = myName;
+	//variables.mymom = mothername;
+	variables.mybg = selBg;
+	variables.myquote = wId;
+
+
+	var request:URLRequest = new URLRequest('http://localhost/mylink/data.php');
+	request.method = URLRequestMethod.POST;
+	request.data = variables;
+
+	var loader:URLLoader = new URLLoader(request);
+	loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+	loader.addEventListener(Event.COMPLETE, dataOnLoad);
+	loader.load(request);
+
+	function dataOnLoad(e:Event)
+	{
+		var variables:URLVariables = URLVariables(e.target.data);
+		//resptxt.text = variables.done;
+		trace(variables.result);
+		var myV = variables.result;// gives : variable k display here
+		MovieClip(root).myK = myV;
+		gotoAndStop(25);
+
+		var rect:Shape = new Shape();
+		rect.graphics.beginFill(0xFFFFFF);
+		rect.graphics.drawRect(0, 0, 465, 365);
+		rect.graphics.endFill();
+		addChild(rect);
+		var ldr:Loader = new Loader();
+		ldr.mask = rect;
+	var url:String = "http://localhost/mylink/img_bg_Final" + myV + ".png";//put the returned img url you got from the php here.
+		var urlReq:URLRequest = new URLRequest(url);
+		ldr.load(urlReq);
+		//the loader will start loading the img;
+		addChild(ldr);//here you add the loader to stage. 
+	}
+}
+
+selW4.addEventListener(MouseEvent. CLICK, selectwish4);
+function selectwish4(event:MouseEvent):void
+{
+
+	gotoAndStop(15);
+	MovieClip(root).wId = "Group 4";
+	//gotoAndStop(15);
+	selBg = MovieClip(root).bgId;
+	trace(selBg);
+	trace(wId);
+
+	var variables:URLVariables = new URLVariables();
+	//variables.myname = myName;
+	//variables.mymom = mothername;
+	variables.mybg = selBg;
+	variables.myquote = wId;
+
+
+	var request:URLRequest = new URLRequest('http://localhost/mylink/data.php');
+	request.method = URLRequestMethod.POST;
+	request.data = variables;
+
+	var loader:URLLoader = new URLLoader(request);
+	loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+	loader.addEventListener(Event.COMPLETE, dataOnLoad);
+	loader.load(request);
+
+
+	function dataOnLoad(e:Event)
+	{
+		var variables:URLVariables = URLVariables(e.target.data);
+		//resptxt.text = variables.done;
+		trace(variables.result);
+		var myV = variables.result;// gives : variable k display here
+		MovieClip(root).myK = myV;
+		gotoAndStop(25);
+
+		var rect:Shape = new Shape();
+		rect.graphics.beginFill(0xFFFFFF);
+		rect.graphics.drawRect(0, 0, 465, 365);
+		rect.graphics.endFill();
+		addChild(rect);
+		var ldr:Loader = new Loader();
+		ldr.mask = rect;
+		var url:String = "http://localhost/mylink/img_bg_Final" + myV + ".png";//put the returned img url you got from the php here.
+		var urlReq:URLRequest = new URLRequest(url);
+		ldr.load(urlReq);
+		//the loader will start loading the img;
+		addChild(ldr);//here you add the loader to stage. 
+	}
+}
+
+selW5.addEventListener(MouseEvent. CLICK, selectwish5);
+function selectwish5(event:MouseEvent):void
+{
+
+	gotoAndStop(15);
+	MovieClip(root).wId = "Group 5";
+	//gotoAndStop(15);
+	selBg = MovieClip(root).bgId;
+	trace(selBg);
+	trace(wId);
+	var variables:URLVariables = new URLVariables();
+	//variables.myname = myName;
+	//variables.mymom = mothername;
+	variables.mybg = selBg;
+	variables.myquote = wId;
+
+
+	var request:URLRequest = new URLRequest('http://localhost/mylink/data.php');
+	request.method = URLRequestMethod.POST;
+	request.data = variables;
+
+	var loader:URLLoader = new URLLoader(request);
+	loader.dataFormat = URLLoaderDataFormat.VARIABLES;
+	loader.addEventListener(Event.COMPLETE, dataOnLoad);
+	loader.load(request);
+
+	function dataOnLoad(e:Event)
+	{
+		var variables:URLVariables = URLVariables(e.target.data);
+		//resptxt.text = variables.done;
+		trace(variables.result);
+		var myV = variables.result;// gives : variable k display here
+		MovieClip(root).myK = myV;
+		gotoAndStop(25);
+
+		var rect:Shape = new Shape();
+		rect.graphics.beginFill(0xFFFFFF);
+		rect.graphics.drawRect(0, 0, 465, 365);
+		rect.graphics.endFill();
+		addChild(rect);
+		var ldr:Loader = new Loader();
+		ldr.mask = rect;
+		var url:String = "http://localhost/mylink/img_bg_Final" + myV + ".png";//put the returned img url you got from the php here.
+		var urlReq:URLRequest = new URLRequest(url);
+		ldr.load(urlReq);
+		//the loader will start loading the img;
+		addChild(ldr);//here you add the loader to stage. 
+	}
+}

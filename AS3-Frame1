@@ -1,0 +1,16 @@
+//AS3 frame1
+import flash.events.MouseEvent;
+//import flash.display.MovieClip;
+stop();
+startBtn.useHandCursor = true;
+
+
+startBtn.addEventListener(MouseEvent. CLICK, startapp);
+function startapp(event:MouseEvent):void
+{
+
+
+	gotoAndStop(10);
+
+
+}

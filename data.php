@@ -13,7 +13,7 @@
     $wish= $_POST['myquote'];
 
     // $link is the same connection created in your connect.php script
-    if (mysqli_query($link, "INSERT INTO user_data (u_name,u_mother_name,u_wish,u_img) VALUES('$name','$mom','$wish','$bg')")) {
+    if (mysqli_query($link, "INSERT INTO user_data (u_name,um,uw,ui) VALUES('$name','$mom','$wish','$bg')")) {
 
         // if you want use "loader.dataFormat = URLLoaderDataFormat.VARIABLES" in your ActionScript code
         // you have to use the echo like this : echo 'var=value';
@@ -25,10 +25,10 @@ $sql2 = "SELECT * FROM user_data WHERE id=".$k."";
                 $result = $link->query($sql2);
                 while($row = $result->fetch_assoc()) {
                 //echo"" . $row["u_mother_name"]. "<br><br>";
-                $bg_img=$row["u_img"];
-                $wish=$row["u_wish"];
+                $bg_img=$row["ui"];
+                $wish=$row["uw"];
                 $me=$row["u_name"];
-                $she=$row["u_mother_name"];
+                $she=$row["um"];
 
                 }    
 

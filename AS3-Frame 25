@@ -1,0 +1,41 @@
+import flash.display.MovieClip;
+import flash.events.*;
+import flash.net.*;
+import flash.text.*;
+import flash.events.MouseEvent;
+import flash.net.URLRequest;
+import flash.net.URLVariables;
+import flash.net.URLLoader;
+import fl.containers.UILoader;//import com.facebook.graph.data.FacebookAuthResponse;
+//import com.facebook.graph.Facebook;
+stop();
+var myLink:String;
+
+
+btnDown.addEventListener(MouseEvent. CLICK, backapp);
+function backapp(evt:MouseEvent):void
+{
+	myLink = MovieClip(root).myK;
+	trace(myLink);
+	navigateToURL(new URLRequest("http://localhost/mylink/img_comp"+ myLink +".png"));
+}
+
+
+
+fbShare.addEventListener(MouseEvent. CLICK, shareapp);
+function shareapp(evt:Event):void
+{
+	myLink = MovieClip(root).myK;
+	var req:URLRequest = new URLRequest();
+	req.url = "http://www.facebook.com/dialog/feed";
+	var vars:URLVariables = new URLVariables();
+	vars.app_id = "myappid";// your application's id
+	vars.link = "http://mylink/image_comp_l" + myLink + ".png";
+	vars.picture = "http://mylink/image_comp_l" + myLink + ".png";
+	//vars.name = "Name...!";
+	//vars.caption = "Caption";//vars.description = "My score is " + String(score) + " Try and you!";
+	vars.redirect_uri = "http://mylink/apps/mday2/test.html";
+	req.data = vars;
+	req.method = URLRequestMethod.GET;
+	navigateToURL(req, "_blank");
+}
